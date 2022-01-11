@@ -24,8 +24,14 @@ public class Empresa extends Contribuinte{
 
 
 	@Override
-	public Double imposto() {
-		return 0;
+	public Double imposto(Double taxa) {
+		if(numeroDeFuncionarios < 10) {
+			taxa = (16/100)*rendaAnual;
+		}else {
+			taxa = (14/100)*rendaAnual;
+
+		}
+		return taxa;
 	}
 
 
