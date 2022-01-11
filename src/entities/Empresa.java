@@ -22,16 +22,14 @@ public class Empresa extends Contribuinte{
 		this.numeroDeFuncionarios = numeroDeFuncionarios;
 	}
 
-
 	@Override
-	public Double imposto(Double taxa) {
-		if(numeroDeFuncionarios < 10) {
-			taxa = (16/100)*rendaAnual;
-		}else {
-			taxa = (14/100)*rendaAnual;
-
+	public Double imposto() {
+		if (numeroDeFuncionarios > 10) {
+			return getRendaAnual() * 0.14;
 		}
-		return taxa;
+		else {
+			return getRendaAnual() * 0.16;
+		}
 	}
 
 

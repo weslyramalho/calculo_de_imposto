@@ -18,19 +18,13 @@ public class Individual extends Contribuinte  {
 	}
 
 	@Override
-	public Double imposto(Double taxa) {
-		
-		if(rendaAnual < 20000) {
-			taxa = (15/100)*rendaAnual;
-		}else if(rendaAnual >= 20000) {
-			if(gastoComSaude > 0) {
-				taxa = (25/100)*rendaAnual - (50/100)*gastoComSaude;
-			}else {
-				taxa = (25/100)*rendaAnual;
-			}
+	public Double imposto() {
+		if (getRendaAnual() < 20000.0) {
+			return getRendaAnual() * 0.15 - gastoComSaude * 0.5;
 		}
-		return taxa;
-		
+		else {
+			return getRendaAnual() * 0.25 - gastoComSaude * 0.5;
+		}
 	}
 
 }

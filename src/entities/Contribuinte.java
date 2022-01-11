@@ -1,6 +1,6 @@
 package entities;
 
-public class Contribuinte {
+public abstract class Contribuinte {
 	private String nome;
 	protected Double rendaAnual;
 	
@@ -26,10 +26,6 @@ public class Contribuinte {
 	public void setRendaAnual(Double rendaAnual) {
 		this.rendaAnual = rendaAnual;
 	}
-	public Double imposto(Double taxa) {
-
-		return taxa;
-		
-	}
+	public abstract Double imposto();
 
 }
